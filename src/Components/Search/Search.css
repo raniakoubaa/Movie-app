@@ -1,0 +1,16 @@
+.star-search{
+   margin-top:20px;
+margin-left:600px;
+}
+h3{
+   color: red;
+   text-align: center;
+   padding-bottom: 150px;
+}
+.SearchRating{
+   /* margin-top: 30px; */
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   /* padding: 20px; */
+}
