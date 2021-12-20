@@ -17,24 +17,23 @@ const SearchRating = ({ List }) => {
   // }
   const [searchResults, setSearchResults] = useState([]);
 
+  // useEffect(() => {
+  //   const results = List.filter(elt =>
+  //     elt.Rating === SearchRating
+  //   );
+  //   setSearchResults(results);
+  // }, [SearchRating]);
+
   useEffect(() => {
-    const results = List.filter(elt =>
-      elt.Rating === SearchRating
-    );
-    setSearchResults(results);
-  }, [SearchRating]);
+    List = List.filter(elt =>
+      elt.Rating === SearchRating)
+    }, [SearchRating]);
   return (
     <div>
-      <div className='star-search' >
-        <ReactStars
-          count={5}
-          onChange={ratingChanged}
-          size={24}
-          color2={'#ffd700'} />
-
-      </div>
+      
       <div className='SearchRating'>
-        {searchResults.size !==0 ? <MovieList list={searchResults} /> : <h3> No Movie</h3> }</div>
+        { <MovieList list={List} /> }</div>
+       
 
     </div>
   )

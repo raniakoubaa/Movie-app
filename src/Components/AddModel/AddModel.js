@@ -1,6 +1,7 @@
 import React, {useState } from 'react'
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
-
+import {BiImageAdd} from 'react-icons/bi'
+import './AddModel.css'
 
 function AddModel({handleAdd}){
     const [title, setTitle] = useState("")
@@ -26,21 +27,20 @@ function AddModel({handleAdd}){
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
-          Add New Movie
-        </Button>
-  
+      <div className='button-add'>
+        <BiImageAdd  size={20} style={{ fill: 'white'}} onClick={handleShow}/>
+        </div>
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header>
           <Modal.Title>Add Movie</Modal.Title>
           </Modal.Header>
           <Modal.Body> <Form>
                             <Form.Group as={Row} className="mb-3">
                                 <Form.Label column sm="2">
-                                    Title
+                                  Title
                                 </Form.Label>
                                 <Col sm="10">
-                                    <input type="text" name="Title" onChange={HandleTitle}/>{title}
+                                    <input type="text" name="Title" onChange={HandleTitle}/>
                                 </Col>
                             </Form.Group>
 

@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Form, FormControl } from 'react-bootstrap';
 import { GoSearch } from 'react-icons/go';
-import MovieCard from '../MovieCard/MovieCard';
-import MovieList from '../MovieList/MovieList';
+import ReactStars from 'react-stars';
+
 import './Search.css'
 
-const Search = ({ SearchRating, List }) => {
+const Search = ({ searchTerm, handleChange, ratingChanged}) => {
 
-
-    const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
-    const handleChange = event => {
-        setSearchTerm(event.target.value);
-    };
-    useEffect(() => {
-        const results = List.filter(elt =>
-            elt.Title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setSearchResults(results);
-    }, [searchTerm]);
     return (
         <div>
             <div className='Search'>
@@ -34,10 +22,14 @@ const Search = ({ SearchRating, List }) => {
                     />
                 </Form>
             </div>
-            <div className='SearchRating'>
-            {searchTerm ?  searchResults.map(item => <MovieCard item={item} />) : <MovieList list={List} />}
-    
-        </div>
+            <div className='star-search' >
+               
+            <ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            color2={'#ffd700'} />
+            </div>
         </div>
     )
 }

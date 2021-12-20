@@ -1,7 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+
 .hearder-text{
+  
     font-size: 16px;
     color: white;
 }
 .header{
     margin-bottom: 50px;
+}
+.title{
+    font-family: "Vollkorn";
+}
+.addModel{
+    display: flex;
+    font-size: 16px;
+    color: white;
 }
