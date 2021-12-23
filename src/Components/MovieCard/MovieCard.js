@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap'
 import './MovieCard.css'
 import ReactStars from 'react-stars'
 import {TiDeleteOutline} from 'react-icons/ti'
+import { Link } from 'react-router-dom'
 
 const MovieCard = ({ item, handlDelete }) => {
   return (
@@ -10,7 +11,7 @@ const MovieCard = ({ item, handlDelete }) => {
 
       <Card style={{ width: '15rem' }}>
       <TiDeleteOutline size={25} onClick={()=>handlDelete(item.id)}/> 
-        <Card.Img variant="top" src={item.Url} height="200px"/>
+       <Link to={`/MovieCard/${item.id}`}> <Card.Img variant="top" src={item.Url} height="200px"/></Link>
         <Card.Body>
           <Card.Title>{item.Title}</Card.Title>
           <Card.Text> {item.year}</Card.Text>

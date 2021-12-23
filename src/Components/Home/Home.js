@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Carousel } from 'react-bootstrap'
+import MovieList from '../MovieList/MovieList';
+import Search from '../Search/Search';
 
 import './Home.css'
 
 
-function Home() {
+function Home({ListM, handlDelete}) {
+   
+      const [searchTerm, setSearchTerm] = useState("");
+      const handleChange = event => {
+        setSearchTerm(event.target.value);
+      };
+      const [Rate, setRate] = useState(1)
+      const ratingChanged = (rate) => {
+        setRate(rate)
+      }
+     
     return (
         <div>
             <Carousel className='Carousel'>
@@ -37,7 +49,9 @@ function Home() {
                     />
                 </Carousel.Item>
             </Carousel>
-
+            <Search handleChange={handleChange} searchTerm={searchTerm} ratingChanged={ratingChanged} />
+      <MovieList  handlDelete={handlDelete}
+      list={ListM.filter(elt => elt.Title.toLowerCase().trim().includes(searchTerm.toLowerCase().trim()) && elt.Rating >= Rate)} />
            
         </div>
     )

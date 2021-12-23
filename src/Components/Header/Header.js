@@ -5,6 +5,7 @@ import { IoHome} from 'react-icons/io5';
 import { BiMoviePlay} from 'react-icons/bi';
 import { IoLogInOutline} from 'react-icons/io5';
 import AddModel from '../AddModel/AddModel';
+
 const Header = ({handleAdd}) => {
     return (
         <div className='header'>

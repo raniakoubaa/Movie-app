@@ -1,0 +1,20 @@
+.MovieDesc{
+    margin-bottom: 30px;
+}
+iframe{
+    margin-left: 30%;
+}
+h1{
+    margin-left: 20px;
+    color:white;
+}
+.Description {
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 30%;
+   
+  }
+  .Description img {
+    width: 50%;
+    
+  }
